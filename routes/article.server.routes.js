@@ -2,6 +2,12 @@ module.exports = function(app){
 
  var articles = require('./../controllers/articles.server.controller.js');
  var users = require('./../controllers/users.server.controller.js');
+ 
+ app.route('/article/new')
+    .get(articles.new);
+    
+app.route('/article/all')
+    .get(articles.new);
 
  app.route('/api/articles')
 	.get(articles.list)
