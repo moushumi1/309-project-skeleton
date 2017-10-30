@@ -7,7 +7,19 @@ module.exports = function(app){
     .get(articles.new);
     
 app.route('/article/all')
-    .get(articles.new);
+    .get(articles.all);
+    
+app.route('/articles/:articleId')
+    .get(articles.view);
+
+app.route('/articles/:articleId')
+	.get(articles.edit);
+	
+app.route('/articles/:articleId')
+	.get(articles.create);
+	
+app.route('/articles/:articleId')
+	.get(articles.Article);
 
  app.route('/api/articles')
 	.get(articles.list)

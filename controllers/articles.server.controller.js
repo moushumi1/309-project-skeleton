@@ -11,15 +11,51 @@ exports.edit = function(req, res){
   });
 };
 
-exports.all = function(req, res) {
+/*exports.all = function(req, res) {
 	res.render('./../public/views/article/edit.ejs', {
+		user: req.user || null,
+		request: req
+	});
+};*/
+
+exports.all = function(req, res) {
+	Article.find(function(err, data) {
+	  if(err)
+	  {
+	    return res.status(400).send({
+	      message:errorHandler.getErrorMessage(err)
+	    });
+	  }
+	  else
+	  {
+	    console.log("api called");
+	    res.render('./../public/views/article/all.ejs',{
+	   user: req.user || null,
+		request: req,
+		articles:data
+	      
+	    });
+	  }
+	
+	});
+};
+
+exports.new = function(req, res) {
+	res.render('./../public/views/article/create.ejs', {
 		user: req.user || null,
 		request: req
 	});
 };
 
-exports.new = function(req, res) {
-	res.render('./../public/views/article/edit.ejs', {
+exports.view = function(req, res) {
+	res.render('./../public/views/article/view.ejs', {
+		user: req.user || null,
+		request: req
+	});
+};
+
+exports.Article = function(req, res) {
+	res.render('./../public/views/article/Article.ejs', {
 		user: req.user || null,
 		request: req
 	});
