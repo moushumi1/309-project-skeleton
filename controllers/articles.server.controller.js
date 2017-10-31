@@ -54,12 +54,12 @@ exports.view = function(req, res) {
 	});
 };
 
-exports.Article = function(req, res) {
+/*exports.Article = function(req, res) {
 	res.render('./../public/views/article/Article.ejs', {
 		user: req.user || null,
 		request: req
 	});
-};
+};*/
 
 
 
