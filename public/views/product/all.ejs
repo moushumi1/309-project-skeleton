@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>All Products</title>
+    </head>
+    <body>
+        <h1>Product List</h1>
+        <% console.log(products) %>
+          <% for(var i=0; i<products.length; i++) { %>
+            <h1> <a href="/products/<%=products[i]._id %>">  </h1>
+            <h1> <%= products[i].name %> </h1>
+            <% } %>
+    </body>
+</html>
